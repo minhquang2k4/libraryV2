@@ -1,0 +1,19 @@
+.header{
+    background-color: rgb(133, 141, 222) !important;
+    height: 50px;
+    width: 100%;
+}
+
+.headerText{
+    color: white !important;
+    font-size: 18px;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight:bold;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 4px 5px;
+    color: white;
+}

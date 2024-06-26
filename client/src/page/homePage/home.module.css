@@ -1,0 +1,86 @@
+.features {
+    margin-top: 25px !important;
+}
+
+.modal {
+    cursor: pointer;
+}
+
+.modal:hover {
+    transform: scale(1.05);
+}
+
+.books {
+    max-height: 83vh;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book {
+    padding: 0px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.delete {
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+.bookHeader {
+    margin-left: 5px !important;
+    padding: 0px !important;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.bookAuthor {
+    margin-left: 5px !important;
+    margin-top: -10px !important;
+    margin-bottom: -15px !important;
+    opacity: 0.5;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.bookType {
+    margin-left: 5px !important;
+    margin-top: -10px !important;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.bookGenre {
+    margin-left: 5px !important;
+    margin-top: -10px !important;
+    text-align: left;
+    flex-grow: 1;
+
+}
+
+.bookDescription {
+    margin: 5px !important;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+.bookButton {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px !important;
+}
+
+.fixedHeightImage {
+    height: 225px !important;
+    object-fit: cover;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-bottom: -15px;
+}
