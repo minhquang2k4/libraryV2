@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-const db = require('./config/database.js');
+// const db = require('./config/database.js');
 dotenv.config();
-db.connect();
+// db.connect();
 
-const port = process.env.PORT || 8004;
+const port = process.env.PORT || 8003;
 
 app.get('/', (req, res) => {
-    res.send('user!');
+    res.send('manager!');
 });
 
 app.listen(port, () => {

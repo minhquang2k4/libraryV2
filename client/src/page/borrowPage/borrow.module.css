@@ -2,14 +2,6 @@
     margin-top: 25px !important;
 }
 
-.modal {
-    cursor: pointer;
-}
-
-.modal:hover {
-    transform: scale(1.05);
-}
-
 .books {
     max-height: 83vh;
     overflow-y: auto;
@@ -53,7 +45,6 @@
     margin-top: -10px !important;
     text-align: left;
     flex-grow: 1;
-
 }
 
 .bookDescription {
@@ -63,8 +54,6 @@
 }
 
 .bookButton {
-    display: flex;
-    justify-content: space-between;
     margin: 5px !important;
 }
 

@@ -11,6 +11,7 @@ import {
 import ModalAddBook from '../../components/modal/modalAddBook.jsx';
 import ModalEditBook from '../../components/modal/modalEditBook.jsx';
 import ModalBorrowBook from '../../components/modal/modalBorrowBook.jsx';
+import ModalDeleteBook from '../../components/modal/modalDeleteBook.jsx';
 import styles from './home.module.css';
 
 const Home = () => {
@@ -88,25 +89,29 @@ const Home = () => {
         <Container fluid>
             <Grid celled='internally'>
                 <Grid.Column width={3} floated='left'>
-                    <Segment basic>
+                    <Grid.Row>
                         <Header as='h3'>Features</Header>
                         <Divider />
+                    </Grid.Row>
+                    <Grid.Row>
                         <List className={styles.features}>
                             <List.Item className={styles.modal}><ModalAddBook /></List.Item>
                             <List.Item className={styles.modal}>Export to excel</List.Item>
                         </List>
-                    </Segment>
+                    </Grid.Row>
                 </Grid.Column>
                 <Grid.Column width={13}>
-                    <Segment basic>
+                    <Grid.Row>
                         <Header as='h3'>Library</Header>
                         <Divider />
+                    </Grid.Row>
+                    <Grid.Row>
                         <Grid className={styles.books}>
                             {books.map((book, index) => (
                                 <Grid.Column key={index} width={4}>
                                     <Segment className={styles.book}>
                                         <Image src={book.image} size='medium' className={styles.fixedHeightImage} />
-                                        <div className={styles.delete}>x</div>
+                                        <ModalDeleteBook className={styles.delete}/>
                                         <Header as='h3' className={styles.bookHeader}>{book.title}</Header>
                                         <p className={styles.bookAuthor}>{book.author}</p>
                                         <p className={styles.bookType}>Type: {book.type}</p>
@@ -121,7 +126,7 @@ const Home = () => {
                                                 Image={book.image}
                                                 Description={book.description}
                                                 Genre={book.genre}
-                                                Type={book.type} 
+                                                Type={book.type}
                                             />
                                             <ModalBorrowBook />
                                         </div>
@@ -129,9 +134,8 @@ const Home = () => {
                                 </Grid.Column>
                             ))}
                         </Grid>
-                    </Segment>
+                    </Grid.Row>
                 </Grid.Column>
-                <Divider vertical></Divider>
             </Grid>
         </Container>
     );
