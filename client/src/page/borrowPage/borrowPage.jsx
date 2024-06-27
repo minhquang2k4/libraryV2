@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Container,
@@ -13,7 +13,7 @@ import ModalReturnBook from '../../components/modal/modalReturnBook.jsx';
 import styles from './borrow.module.css';
 
 const Borrow = () => {
-  const books = [
+  const books = useMemo(() => [
     {
       id: 1,
       title: 'Book 1',
@@ -80,14 +80,14 @@ const Borrow = () => {
       genre: 'Truyen tranh',
       type: 'Moi',
     },
-  ]
+  ], [])
 
   const [show, setShow] = useState(false)
 
   useEffect(() => {
     if (books.length === 0) {
       setShow(true)
-    }else{
+    } else {
       setShow(false)
     }
   }, [books])
@@ -95,28 +95,29 @@ const Borrow = () => {
   return (
     <Container fluid>
       <Grid celled='internally'>
-        <Grid.Column width={3}>
+        <Grid.Column width={2}>
           <Grid.Row>
             <Header as='h3'>Features</Header>
             <Divider />
           </Grid.Row>
           <Grid.Row>
             <List className={styles.features}>
-              <List.Item><div>Home</div></List.Item>
+              <List.Item className={styles.feature}><div>Home</div></List.Item>
+              <List.Item className={styles.feature}>Export to excel</List.Item>
             </List>
           </Grid.Row>
         </Grid.Column>
-        <Grid.Column width={13}>
+        <Grid.Column width={14}>
           <Grid.Row>
             <Header as='h3'>Borrow</Header>
             <Divider />
           </Grid.Row>
           <Grid.Row>
             {
-              show && 
+              show &&
               <div>
                 no books borrowed, click <Link to='/' >here</Link> to borrow
-              </div> 
+              </div>
             }
             <Grid className={styles.books}>
               {books.map((book, index) => (

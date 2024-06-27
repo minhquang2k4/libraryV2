@@ -88,19 +88,20 @@ const Home = () => {
     return (
         <Container fluid>
             <Grid celled='internally'>
-                <Grid.Column width={3} floated='left'>
+                <Grid.Column width={2} floated='left'>
                     <Grid.Row>
                         <Header as='h3'>Features</Header>
                         <Divider />
                     </Grid.Row>
                     <Grid.Row>
                         <List className={styles.features}>
-                            <List.Item className={styles.modal}><ModalAddBook /></List.Item>
-                            <List.Item className={styles.modal}>Export to excel</List.Item>
+                            <List.Item className={styles.feature}>Home</List.Item>
+                            <List.Item className={styles.feature}><ModalAddBook /></List.Item>
+                            <List.Item className={styles.feature}>Export to excel</List.Item>
                         </List>
                     </Grid.Row>
                 </Grid.Column>
-                <Grid.Column width={13}>
+                <Grid.Column width={14}>
                     <Grid.Row>
                         <Header as='h3'>Library</Header>
                         <Divider />

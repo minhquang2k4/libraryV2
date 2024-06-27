@@ -36,7 +36,7 @@ const Register = () => {
                         control={Input}
                         placeholder='Password'
                     />
-                    <Button as={Link} to='/login' color='linkedin'>Register</Button>
+                    <Button color='linkedin'>Register</Button>
                     <div>
                         Already have an account? <Link to='/login'><b>Login</b></Link>
                     </div>

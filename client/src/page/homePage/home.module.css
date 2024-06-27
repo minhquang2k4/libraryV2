@@ -1,12 +1,14 @@
 .features {
     margin-top: 25px !important;
+    margin-left: 25px !important;
+    text-align: left;
 }
 
-.modal {
+.feature {
     cursor: pointer;
 }
 
-.modal:hover {
+.feature:hover {
     transform: scale(1.05);
 }
 

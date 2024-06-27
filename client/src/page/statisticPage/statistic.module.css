@@ -1,0 +1,13 @@
+.features {
+    margin-top: 25px !important;
+    margin-left: 25px !important;
+    text-align: left;
+}
+
+.feature{
+    cursor: pointer;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
