@@ -7,77 +7,80 @@ import {
     List,
     Divider,
     Image,
-    Button,
 } from 'semantic-ui-react';
 import ModalAddBook from '../../components/modal/modalAddBook.jsx';
+import ModalEditBook from '../../components/modal/modalEditBook.jsx';
+import ModalBorrowBook from '../../components/modal/modalBorrowBook.jsx';
 import styles from './home.module.css';
 
 const Home = () => {
 
     const books = [
         {
+            id: 1,
             title: 'Book 1',
             author: 'Author 1',
             image: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
             description: 'Book 1 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
         {
+            id: 2,
             title: 'Book 2',
             author: 'Author 2',
             image: 'https://images.unsplash.com/photo-1718809070374-e373e7c41414?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             description: 'Book 2 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
         {
             title: 'Book 3',
             author: 'Author 3',
             image: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
             description: 'Book 3 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
         {
             title: 'Book 4',
             author: 'Author 4',
             image: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
             description: 'Book 4 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
         {
             title: 'Book 1',
             author: 'Author 1',
             image: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
             description: 'Book 1 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
         {
             title: 'Book 2',
             author: 'Author 2',
             image: 'https://images.unsplash.com/photo-1718809070374-e373e7c41414?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             description: 'Book 2 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
         {
             title: 'Book 3',
             author: 'Author 3',
             image: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
             description: 'Book 3 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
         {
             title: 'Book 4',
             author: 'Author 4',
             image: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
             description: 'Book 4 description',
-            Genre: 'Truyen tranh',
-            Type: 'Moi',
+            genre: 'Truyen tranh',
+            type: 'Moi',
         },
     ]
 
@@ -106,14 +109,21 @@ const Home = () => {
                                         <div className={styles.delete}>x</div>
                                         <Header as='h3' className={styles.bookHeader}>{book.title}</Header>
                                         <p className={styles.bookAuthor}>{book.author}</p>
-                                        <Divider />
-                                        <p className={styles.bookType}>Type: {book.Type}</p>
-                                        <p className={styles.bookGenre}>Genre: {book.Genre}</p>
+                                        <p className={styles.bookType}>Type: {book.type}</p>
+                                        <p className={styles.bookGenre}>Genre: {book.genre}</p>
                                         <p className={styles.bookDescription}>Description: {book.description}</p>
                                         <Divider />
                                         <div className={styles.bookButton}>
-                                            <Button color='linkedin'>Edit</Button>
-                                            <Button color='linkedin'>Borrow</Button>
+                                            <ModalEditBook
+                                                Id={book.id}
+                                                Title={book.title}
+                                                Author={book.author}
+                                                Image={book.image}
+                                                Description={book.description}
+                                                Genre={book.genre}
+                                                Type={book.type} 
+                                            />
+                                            <ModalBorrowBook />
                                         </div>
                                     </Segment>
                                 </Grid.Column>
