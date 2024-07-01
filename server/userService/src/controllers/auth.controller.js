@@ -7,7 +7,7 @@ module.exports.register = async (req, res) => {
         const { userName, phoneNumber, email, password } = req.body;
 
         if (await User.findOne({ email: email })) {
-            res.status(409).json({ message: "Username already exists" });
+            res.status(409).json({ message: "Email already exists" });
             return;
         }
 

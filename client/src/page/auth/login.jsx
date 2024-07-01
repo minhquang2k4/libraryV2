@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -11,25 +11,28 @@ import {
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import style from './login.module.css';
+import { AuthContext } from '../../provider/authProvider.jsx';
 
 const Login = () => {
+    const { setAuth } = useContext(AuthContext);
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Ngăn chặn form gửi yêu cầu HTTP POST mặc định
+        e.preventDefault(); // Form gửi yêu cầu HTTP POST mặc định
         try {
             const response = await axios.post('http://localhost:8004/api/v1/login', {
                 email: email,
                 password: password
             }, {
-                withCredentials: true 
+                withCredentials: true
             });
 
             if (response.status === 200) {
                 localStorage.setItem('username', response.data.username);
                 localStorage.setItem('isAuthenticated', true);
+                setAuth(true);
                 navigate('/');
             }
         } catch (error) {
@@ -50,7 +53,7 @@ const Login = () => {
                     <FormField>
                         <Input
                             placeholder='Email'
-                            type= 'email'
+                            type='email'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
