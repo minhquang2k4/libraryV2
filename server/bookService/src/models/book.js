@@ -4,35 +4,35 @@ const schema = mongoose.Schema;
 const bookSchema = new schema({
     title: {
         type: String,
-        // required: true
+        required: true
     },
     author: {
         type: String,
-        // required: true
+        required: true
     },
     image: {
         type: String,
-        // required: true
+        required: true
     },
     description: {
         type: String,
-        // required: true
+        required: true
     },
     genreId: {
         type: schema.Types.ObjectId,
-        // required: true
+        required: true
     },
     genreName: {
         type: String,
-        // required: true
+        required: true
     },
     typeId: {
         type: schema.Types.ObjectId,
-        // required: true
+        required: true
     },
     typeName: {
         type: String,
-        // required: true
+        required: true
     },
 });
 
